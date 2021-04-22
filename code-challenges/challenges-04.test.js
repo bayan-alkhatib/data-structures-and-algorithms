@@ -79,7 +79,7 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   let newArray=[];
-  let regex=/\b[A-J].*?\b/g;
+  let regex=/^[A-J]/g;
   arr.forEach(value=>{
     if (value[0].match(regex)){
       newArray.push(value);
