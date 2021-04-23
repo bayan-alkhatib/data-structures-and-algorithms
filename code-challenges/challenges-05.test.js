@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 'use strict';
 
 /* ------------------------------------------------------------------------------------------------
@@ -27,9 +28,9 @@ let starWarsPeople = [
 const sortStarWarsCharacters = (starWarsArr) => {
   starWarsArr=starWarsPeople;
   starWarsArr.sort((a,b)=>{
-    if (a.height<b.height){
+    if (parseInt(a.height)<parseInt (b.height)){
       return 1;
-    }if(a.height>b.height){
+    }if(parseInt(a.height)>parseInt (b.height)){
       return -1;
     }else{
       return 0;
@@ -45,7 +46,8 @@ Write a function named removeThree that takes an index and an array. The functio
 ------------------------------------------------------------------------------------------------ */
 
 const removeThree = (idx, arr) => {
-  // Solution code here...
+  arr.splice(idx,3);
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -54,8 +56,8 @@ CHALLENGE 3
 Write a function named joinArray that takes an array and joins all of the elements together in one string on a space.
 ------------------------------------------------------------------------------------------------ */
 
-const joinArray = (arr) => {
-  // Solution code here...
+const joinArray = (arr) =>{
+  return arr.join(' ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -73,7 +75,9 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
-  // Solution code here...
+  for (let i=0;i<=str.length;i++){
+    result.push(str.slice(i));
+  }
   return result;
 };
 
@@ -86,7 +90,8 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
-  // Solution code here...
+  let newArray=(arr.split(''));
+  return newArray;
 };
 
 
@@ -133,7 +138,10 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  for(let i=0;i<recipe.ingredients.length;i++){
+    let index=recipe.ingredients[i].indexOf(' ',4);
+    result.push(recipe.ingredients[i].slice(index+1));
+  }
   return result;
 };
 
