@@ -72,7 +72,11 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 
 const filterStringsWithVowels = (arr) => {
-  // Solution code here...
+  let regex=/[aiueo]/g;
+  let newArray =arr.filter(value=>{
+    return value.match(regex);
+  });
+  return newArray;
 };
 
 
@@ -85,7 +89,10 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
+  let newArray=arr.filter(value=>{
+    return !forbiddenValues.includes(value);
+  });
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
